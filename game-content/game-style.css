@@ -9,7 +9,7 @@ body
     margin: auto;
     word-wrap: break-word;
     font-family: 'Roboto', sans-serif;
-    background-color: #F59700;
+    background-color: #F5B614;
     color: white;
     font-size: 1.25rem;
     overflow-x: hidden;
@@ -44,8 +44,8 @@ i
     height: 1.5rem;
     width: 16rem;
     border-radius: 10px;
-    border: 2px solid #FFC76E;
-    background-color: rgba(255, 190, 110, 0.9);
+    border: 2px solid #A87B19;
+    background-color: #A87B19;
     font-size: 0.9rem;
     margin-left: 10px;
     padding-left: 5px;
@@ -67,8 +67,8 @@ i
     width: 15rem;
     position: relative;
     top: 25vh;
-    border: 2px solid #FFC76E;
-    background-color: rgba(255, 190, 110, 0.9);
+    border: 2px solid #A87B19;
+    background-color: #F5B614;
     border-radius: 10px;
     display: display;
 }
@@ -101,8 +101,8 @@ i
     width: 15rem;
     position: relative;
     top: 25vh;
-    border: 2px solid #FFC76E;
-    background-color: rgba(255, 190, 110, 0.9);
+    border: 2px solid #A87B19;
+    background-color: #F5B614;
     border-radius: 10px;
     display: none;
 }
@@ -114,8 +114,8 @@ i
     width: 25rem;
     position: relative;
     top: 60px;
-    border: 2px solid #FFC76E;
-    background-color: rgba(255, 190, 110, 1);
+    border: 2px solid #A87B19;
+    background-color: #A87B19;
     border-radius: 10px;
     display: none;
     z-index: 1500;
@@ -151,8 +151,8 @@ i
     width: 15rem;
     position: relative;
     top: 25vh;
-    border: 2px solid #FFC76E;
-    background-color: rgba(255, 190, 110, 1);
+    border: 2px solid #A87B19;
+    background-color: #F5B614;
     border-radius: 10px;
     display: display;
 }
@@ -208,6 +208,7 @@ i
     display: inline-block;
     background-color: #1769B3;
     color: #ffffff!important;
+    font-weight: bold;
     padding-right: 15px;
     padding-left: 15px;
     padding-top: 10px;
@@ -632,3 +633,57 @@ i
     .S821 { grid-area: S821; }
     
     .S822 { grid-area: S822; }
+
+    #wrong_resolution
+    {
+      display: none;
+    }
+
+    .emot
+    {
+      font-size: 5rem;
+    }
+
+    .wront_text
+    {
+      background-color: #A87B19;
+    }
+
+    @media (max-width: 499px)
+    {
+      .grid-container, #info, #win, .menu
+      {
+        display: none;
+      }      
+
+      #wrong_resolution
+      {
+        display: block;
+      }
+
+      #wrong_resolution > .info-bg
+      {
+        display: block;
+      }
+
+    }
+
+    @media (max-height: 600px)
+    {
+      .grid-container, #info, #win, .menu
+      {
+        display: none;
+      }      
+
+      #wrong_resolution
+      {
+        display: block;
+      }
+
+      #wrong_resolution > .info-bg
+      {
+        color: white;
+        display: block;
+      }
+
+    }
