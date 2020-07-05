@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Aditional CSS -->
+    <link rel="stylesheet" href="game-content/game-style.css">
+    <script src="https://kit.fontawesome.com/0a9b3f42f5.js" crossorigin="anonymous"></script>
+    
+    <title>Sudoku</title>
+  </head>
+  <body>
+<div class="container">
+  <div class="grid-container">
+    <div class="S0">
+      <div class="S000"></div>
+      <div class="S001"></div>
+      <div class="S002"></div>
+      <div class="S010"></div>
+      <div class="S011"></div>
+      <div class="S012"></div>
+      <div class="S020"></div>
+      <div class="S021"></div>
+      <div class="S022"></div>
+    </div>
+    <div class="S1">
+      <div class="S100"></div>
+      <div class="S101"></div>
+      <div class="S102"></div>
+      <div class="S110"></div>
+      <div class="S111"></div>
+      <div class="S112"></div>
+      <div class="S120"></div>
+      <div class="S121"></div>
+      <div class="S122"></div>
+    </div>
+    <div class="S2">
+      <div class="S200"></div>
+      <div class="S201"></div>
+      <div class="S202"></div>
+      <div class="S210"></div>
+      <div class="S211"></div>
+      <div class="S212"></div>
+      <div class="S220"></div>
+      <div class="S221"></div>
+      <div class="S222"></div>
+    </div>
+    <div class="S3">
+      <div class="S300"></div>
+      <div class="S301"></div>
+      <div class="S302"></div>
+      <div class="S310"></div>
+      <div class="S311"></div>
+      <div class="S312"></div>
+      <div class="S320"></div>
+      <div class="S321"></div>
+      <div class="S322"></div>
+    </div>
+    <div class="S4">
+      <div class="S400"></div>
+      <div class="S401"></div>
+      <div class="S402"></div>
+      <div class="S410"></div>
+      <div class="S411"></div>
+      <div class="S412"></div>
+      <div class="S420"></div>
+      <div class="S422"></div>
+      <div class="S421"></div>
+    </div>
+    <div class="S5">
+      <div class="S500"></div>
+      <div class="S501"></div>
+      <div class="S502"></div>
+      <div class="S510"></div>
+      <div class="S511"></div>
+      <div class="S512"></div>
+      <div class="S520"></div>
+      <div class="S521"></div>
+      <div class="S522"></div>
+    </div>
+    <div class="S6">
+      <div class="S600"></div>
+      <div class="S601"></div>
+      <div class="S602"></div>
+      <div class="S610"></div>
+      <div class="S611"></div>
+      <div class="S612"></div>
+      <div class="S620"></div>
+      <div class="S621"></div>
+      <div class="S622"></div>
+    </div>
+    <div class="S7">
+      <div class="S700"></div>
+      <div class="S701"></div>
+      <div class="S702"></div>
+      <div class="S710"></div>
+      <div class="S711"></div>
+      <div class="S712"></div>
+      <div class="S720"></div>
+      <div class="S721"></div>
+      <div class="S722"></div>
+    </div>
+    <div class="S8">
+      <div class="S800"></div>
+      <div class="S801"></div>
+      <div class="S802"></div>
+      <div class="S810"></div>
+      <div class="S811"></div>
+      <div class="S812"></div>
+      <div class="S820"></div>
+      <div class="S821"></div>
+      <div class="S822"></div>
+    </div>
+  </div>
+</div>
+
+<section id="modal">
+  <div class="modal-bg">
+    <div class="modal-box text-center mx-auto">
+      <div class="row">
+        <div class="col-4"><a class="btn-modal" id="no1">1</a></div>
+        <div class="col-4"><a class="btn-modal" id="no2">2</a></div>
+        <div class="col-4"><a class="btn-modal" id="no3">3</a></div>
+      </div>
+      <div class="row">
+        <div class="col-4"><a class="btn-modal" id="no4">4</a></div>
+        <div class="col-4"><a class="btn-modal" id="no5">5</a></div>
+        <div class="col-4"><a class="btn-modal" id="no6">6</a></div>
+      </div>
+      <div class="row">
+        <div class="col-4"><a class="btn-modal" id="no7">7</a></div>
+        <div class="col-4"><a class="btn-modal" id="no8">8</a></div>
+        <div class="col-4"><a class="btn-modal" id="no9">9</a></div>
+      </div>
+      <div class="row">
+        <div class="col-12"><a class="btn-modal" style="width: 10rem;" id="zero">CLEAR</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="info-bg">
+    <div class="win-box text-center mx-auto">
+      <p class="mt-5">You won!</p>
+      <p class="button">Continute</p>
+    </div>
+
+    <div class="info-box text-center mx-auto">
+      <section id="about">
+        <h2 class="pb-3 pt-3">About website</h2>
+        <div class="container">
+            <p class="mt-5">Built with HTML, CSS, JavaScript with jQuery and Bootstrap 4 frameworks.</p>
+            <p>By Marek Smieja</p>
+            <a class="portfolio" href="http://ms-portfolio.eu/">Portfolio</a>
+            <div class="text-center"><i class="fab fa-html5 fa-2x mx-5"></i><i class="fab fa-css3-alt fa-2x mx-5"></i><i class="fab fa-js fa-2x mx-5"></i><i class="fab fa-bootstrap fa-2x mx-5"></i>
+            </div>
+
+
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="win">
+  <div class="win-bg">
+    <div class="win-box text-center mx-auto">
+      <p class="mt-5">You won!</p>
+      <p class="button">Continute</p>
+    </div>
+    <div class="choose-box text-center mx-auto">
+      <p class="mt-5">Choose sudoku set</p>
+      <p id="set1" class="button-no">1</p>
+      <p id="set2" class="button-no">2</p>
+      <p id="set3" class="button-no">3</p>
+      <p id="set4" class="button-no">4</p>
+    </div>
+  </div>
+</section>
+
+<div class="popup">
+  <p>Same number in row/column/section!</p>
+</div>
+
+<div class="menu">
+  <div class="reset">
+    <p><i class="fas fa-redo"></i></p>
+    
+  </div>
+  <div class="info">
+    <p><i class="fas fa-info-circle"></i></p>
+  </div>
+  
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="game-code.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
