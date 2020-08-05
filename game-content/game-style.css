@@ -38,8 +38,8 @@ i
 .popup
 {
     position: absolute;
-    top: -250;
-    left: -250;
+    top: -250px;
+    left: -250px;
     display: none;
     height: 1.5rem;
     width: 16rem;
@@ -70,7 +70,7 @@ i
     border: 2px solid #A87B19;
     background-color: #F5B614;
     border-radius: 10px;
-    display: display;
+    display: block;
 }
 
 .info-bg
@@ -154,7 +154,7 @@ i
     border: 2px solid #A87B19;
     background-color: #F5B614;
     border-radius: 10px;
-    display: display;
+    display: block;
 }
 
 .button
