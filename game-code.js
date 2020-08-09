@@ -1,14 +1,18 @@
 "use strict";
 
 $(document).ready(function($) {
-    //SUDOKU 3#
+    
     var sudoku;
+    //4 sets of sudoku table are predefined
     $('#set1').click(function(){
-      // sudoku=[[[0,2,0],[4,5,7],[6,8,9]],[[4,5,6],[0,8,0],[2,3,7]],[[7,8,9],[2,3,6],[0,4,0]],[[0,0,5],[2,7,4],[3,9,6]],[[3,6,2],[0,9,0],[5,7,4]],[[9,7,4],[6,5,3],[8,0,0]],[[0,4,0],[7,6,1],[9,3,8]],[[6,1,8],[0,4,0],[7,2,5]],[[3,9,7],[5,2,8],[0,6,0]]];
+        //After clicking on button #set<no>, sudoku table is prepared
       sudoku=[[[1,2,3],[4,5,7],[6,8,9]],[[4,5,6],[1,8,9],[2,3,7]],[[7,8,9],[2,3,6],[1,4,5]],[[8,1,5],[2,7,4],[3,9,6]],[[3,6,2],[8,9,1],[5,7,4]],[[9,7,4],[6,5,3],[8,1,2]],[[0,4,0],[7,6,1],[9,3,8]],[[6,1,8],[0,4,0],[7,2,5]],[[3,9,7],[5,2,8],[0,6,0]]];
       $('.choose-box').fadeOut();
       $('.win-bg').fadeOut();
+      //Execute "sudo_key" function, this function is making a duplicate of initial table, and based on this, selected sudoku squares are not-active
       sudo_key(sudoku, key);
+
+      //Execute "sudo_key" function, this function is sending table on the users screen
       sudo_screen(sudoku, key);
     });
     $('#set2').click(function(){
@@ -33,15 +37,17 @@ $(document).ready(function($) {
       sudo_screen(sudoku, key);
     });
 
+    //Define initial variables for sudoku table, key table
     var sudoku=[[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]];
     var key=[[[4,7,0],[0,2,0],[0,0,0]],[[9,0,1],[3,0,0],[0,0,0]],[[6,0,5],[0,8,4],[0,0,1]],[[0,1,3],[6,0,0],[0,3,0]],[[7,0,8],[2,0,3],[6,0,5]],[[0,5,0],[0,0,9],[8,1,0]],[[8,0,0],[5,9,0],[7,0,1]],[[0,0,0],[0,0,4],[5,0,2]],[[0,0,0],[0,2,0],[0,9,8]]];
+    //Define initial iteration variables for sudoku checking algorithm
     var i, w, k, ist, wst, kst, ch, new_no;
     var sudoku_selected = 0;
     var ca=[0,0,0,0];
     var status_win;
     var kontrola=0;
 
-    //matrix with "start-saved" matrix
+    //Preparing a not-changeable table, buttons with initial values are not-active
     function sudo_key(sudoku, key)
     {
         for (i = 0; i < 9; i++){
@@ -62,7 +68,7 @@ $(document).ready(function($) {
     }
     sudo_key(sudoku, key);
 
-    //putting matrix on screen
+    //Putting table on users screen
     function sudo_screen(sudoku, key)
     {
         for (i = 0; i < 9; i++){
@@ -85,9 +91,9 @@ $(document).ready(function($) {
     }
     sudo_screen(sudoku, key);
 
-    //CHECKER -   checking if selected number is valid (according to sudoku rules)
+    //CHECKER - checking if selected number is valid (according to sudoku rules)
 
-    //checking same no. in section
+    //Checking same no. in section
     function checker1(sudoku, ist, wst, kst, ch)
     {
       var c = 0;
@@ -117,7 +123,7 @@ $(document).ready(function($) {
       }
     };
 
-    //checking same no. in row
+    //Checking same no. in row
     function checker2(sudoku, ist, wst, kst, ch){
       var c = 0;
       if (ch == "True"){
@@ -185,7 +191,7 @@ $(document).ready(function($) {
       }
     }
 
-    //checking same no. in column
+    //Checking same no. in column
     function checker3(sudoku, ist, wst, kst, ch){
       var c = 0;
       if (ch == "True"){
@@ -262,7 +268,7 @@ $(document).ready(function($) {
       }
     }
 
-    //win check
+    //Checking the "win" rule
     function win_check(sudoku){
       var ch_win = 0;
       for (i = 0; i < 9; i++){
@@ -283,7 +289,7 @@ $(document).ready(function($) {
             return "not yet";}
           }
 
-    //entering no. into matrix with checkers start
+    //Inserting no. into table with starting a checking algorithm, if number is correct and algorith is done, number can be inserted into table
     function sudo_put(sudoku, key, ca, new_no)
     {
       if (key[ca[1]][ca[2]][ca[3]]=="O"){
@@ -315,7 +321,8 @@ $(document).ready(function($) {
           ch_print=3;
           sudoku[ca[1]][ca[2]][ca[3]] = sud_save;
           $('.popup').fadeIn(200).delay(1000).fadeOut(200);
-//cursor position spy
+          
+          //Cursor position spy function
           $(document).mousemove(function(e){
             $(".popup").css({left:e.pageX, top:e.pageY});
         });
@@ -325,7 +332,7 @@ $(document).ready(function($) {
       return ch_print;
     }
 
-    //entering no. into matrix with checkers start
+    //Function for checking the selected cell for inserting a "zero" which user see like cleaning the cell from any value
     function sudo_put_zero(sudoku, key, ca, new_no)
     {
       if (key[ca[1]][ca[2]][ca[3]]=="O"){
@@ -334,6 +341,7 @@ $(document).ready(function($) {
       return 0;
     }
 
+    //Checking if the sudoku cell is not a initial value
     function check_key(key, ca){
       if (key[ca[1]][ca[2]][ca[3]]=="B")
       {
@@ -345,7 +353,7 @@ $(document).ready(function($) {
       }
     }
 
-    //getting class name (during click)
+    //Getting class name (during click)
     $(".container").click(function(event) {
         sudoku_selected = $(event.target).attr('class');
         ca = Array.from(sudoku_selected)

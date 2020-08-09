@@ -9,16 +9,19 @@ body
     margin: auto;
     word-wrap: break-word;
     font-family: 'Roboto', sans-serif;
-    background-color: #F5B614;
+    background-color: #fff;
     color: white;
     font-size: 1.25rem;
     overflow-x: hidden;
-
 } 
+
+.menu{
+  color: rgba(23, 105, 179, 0.85);
+}
 
 .portfolio, .portfolio:hover
 {
-    color: white;
+  color: rgba(23, 105, 179, 0.85);
 }
 
 i
@@ -44,8 +47,9 @@ i
     height: 1.5rem;
     width: 16rem;
     border-radius: 10px;
-    border: 2px solid #A87B19;
-    background-color: #A87B19;
+    border: 2px solid rgba(23, 105, 179, 0.85);
+    background-color: #fff;
+    color: rgba(23, 105, 179, 0.85);
     font-size: 0.9rem;
     margin-left: 10px;
     padding-left: 5px;
@@ -59,6 +63,7 @@ i
     left: 0;
     right: 0;
     display: none;
+    color: rgba(23, 105, 179, 0.85);
 }
 
 .modal-box
@@ -67,8 +72,8 @@ i
     width: 15rem;
     position: relative;
     top: 25vh;
-    border: 2px solid #A87B19;
-    background-color: #F5B614;
+    border: 2px solid rgba(23, 105, 179, 0.85);
+    background-color: #fff;
     border-radius: 10px;
     display: block;
 }
@@ -82,7 +87,7 @@ i
     right: 0;
     display: none;
     z-index: 1500;
-
+    color: rgba(23, 105, 179, 0.85);
 }
 
 .win-bg
@@ -101,21 +106,27 @@ i
     width: 15rem;
     position: relative;
     top: 25vh;
-    border: 2px solid #A87B19;
-    background-color: #F5B614;
+    border: 2px solid rgba(23, 105, 179, 0.85);
+    background-color: #fff;
     border-radius: 10px;
     display: none;
+}
+
+.win-box > p:first-of-type
+{
+  color: rgba(23, 105, 179, 0.85);
 }
 
 
 .info-box
 {
-    height: 25rem;
-    width: 25rem;
+    height: 27rem;
+    width: 27rem;
+    padding: 2rem;
     position: relative;
     top: 60px;
-    border: 2px solid #A87B19;
-    background-color: #A87B19;
+    border: 2px solid rgba(23, 105, 179, 0.85);
+    background-color: #fff;
     border-radius: 10px;
     display: none;
     z-index: 1500;
@@ -151,10 +162,15 @@ i
     width: 15rem;
     position: relative;
     top: 25vh;
-    border: 2px solid #A87B19;
-    background-color: #F5B614;
+    border: 2px solid rgba(23, 105, 179, 0.85);
+    background-color: #fff;
     border-radius: 10px;
     display: block;
+}
+
+.choose-box > p:first-child
+{
+  color:rgba(23, 105, 179, 0.85);
 }
 
 .button
@@ -642,11 +658,6 @@ i
     .emot
     {
       font-size: 5rem;
-    }
-
-    .wront_text
-    {
-      background-color: #A87B19;
     }
 
     @media (max-width: 499px)
